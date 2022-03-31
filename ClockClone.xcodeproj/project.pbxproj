@@ -13,7 +13,6 @@
 		2A5C8C2927E4C2B8003B8A79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5C8C2827E4C2B8003B8A79 /* Assets.xcassets */; };
 		2A5C8C2C27E4C2B8003B8A79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5C8C2A27E4C2B8003B8A79 /* LaunchScreen.storyboard */; };
 		2ABDD8E527E77B4B0098C28E /* GlobalClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDD8E427E77B4B0098C28E /* GlobalClockViewController.swift */; };
-		2ABDD8E727E77B820098C28E /* GlobalCitySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDD8E627E77B820098C28E /* GlobalCitySelectViewController.swift */; };
 		2ABDD8E927E77E780098C28E /* CityListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDD8E827E77E780098C28E /* CityListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		2A5C8C2B27E4C2B8003B8A79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A5C8C2D27E4C2B8003B8A79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ABDD8E427E77B4B0098C28E /* GlobalClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClockViewController.swift; sourceTree = "<group>"; };
-		2ABDD8E627E77B820098C28E /* GlobalCitySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCitySelectViewController.swift; sourceTree = "<group>"; };
 		2ABDD8E827E77E780098C28E /* CityListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 				2A5C8C2127E4C2B7003B8A79 /* SceneDelegate.swift */,
 				2A5C8C2527E4C2B7003B8A79 /* Main.storyboard */,
 				2ABDD8E827E77E780098C28E /* CityListTableViewController.swift */,
-				2ABDD8E627E77B820098C28E /* GlobalCitySelectViewController.swift */,
 				2ABDD8E427E77B4B0098C28E /* GlobalClockViewController.swift */,
 				2A5C8C2827E4C2B8003B8A79 /* Assets.xcassets */,
 				2A5C8C2A27E4C2B8003B8A79 /* LaunchScreen.storyboard */,
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ABDD8E727E77B820098C28E /* GlobalCitySelectViewController.swift in Sources */,
 				2ABDD8E527E77B4B0098C28E /* GlobalClockViewController.swift in Sources */,
 				2A5C8C2027E4C2B7003B8A79 /* AppDelegate.swift in Sources */,
 				2A5C8C2227E4C2B7003B8A79 /* SceneDelegate.swift in Sources */,

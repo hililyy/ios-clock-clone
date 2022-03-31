@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityListTableViewController: UITableViewController {
+class CityListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cityItem: [[String]] = [
         ["가보로네, 보츠와나","가자, 팔레스타인"],
         ["나소, 바하마","나우루, 미크로네시아"],
@@ -26,27 +26,44 @@ class CityListTableViewController: UITableViewController {
     ]
     
     let sections: [String] = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+
+    @IBOutlet var cityTableView: UITableView!
+    @IBOutlet var cancelBtn: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        cityTableView.delegate = self
+        cityTableView.dataSource = self
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityItem.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityItem[section].count
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityListTableViewCell", for: indexPath) as! cityListCell
-        print(indexPath.row);
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityListCell", for: indexPath) as! cityListCell
         cell.cityLabel.text = cityItem[indexPath.section][indexPath.row];
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
+    @IBAction func cancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 class cityListCell: UITableViewCell {
