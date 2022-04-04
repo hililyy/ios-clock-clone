@@ -7,13 +7,17 @@
 
 import UIKit
 
-class GlobalClockViewController: UIViewController {
+class GlobalClockViewController: UIViewController, cityDelegate {
 
+    var cityList : [String] = []
+    var addedCity : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-
-
+    func selectedCity(_ controller: GlobalClockViewController, message: String) {
+        cityList.append(addedCity)
+    }
 }
