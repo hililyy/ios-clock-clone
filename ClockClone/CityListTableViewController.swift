@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol cityDelegate {
-    func selectedCity(_ controller: GlobalClockViewController, message:String)
-}
+
 
 class CityListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let cityItem: [[String]] = [
@@ -32,7 +30,6 @@ class CityListTableViewController: UIViewController, UITableViewDelegate, UITabl
     let sections: [String] = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 
     var selectCity: String = ""
-    var delegate : cityDelegate?
     
     @IBOutlet var cityTableView: UITableView!
     @IBOutlet var cancelBtn: UIButton!
@@ -63,11 +60,15 @@ class CityListTableViewController: UIViewController, UITableViewDelegate, UITabl
         return sections[section]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
+    
     
     @IBAction func cancelClick(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 class cityListCell: UITableViewCell {

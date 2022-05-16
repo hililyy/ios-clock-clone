@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GlobalClockViewController: UIViewController, cityDelegate {
+class GlobalClockViewController: UIViewController {
 
     var cityList : [String] = []
     var addedCity : String = ""
@@ -17,7 +17,5 @@ class GlobalClockViewController: UIViewController, cityDelegate {
         
     }
     
-    func selectedCity(_ controller: GlobalClockViewController, message: String) {
-        cityList.append(addedCity)
-    }
+
 }
