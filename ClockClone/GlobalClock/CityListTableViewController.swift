@@ -9,7 +9,7 @@ import UIKit
 
 
 
-class CityListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CityListTableViewController: UIViewController {
     let cityItem: [[String]] = [
         ["가보로네, 보츠와나","가자, 팔레스타인"],
         ["나소, 바하마","나우루, 미크로네시아"],
@@ -26,45 +26,20 @@ class CityListTableViewController: UIViewController, UITableViewDelegate, UITabl
         ["파고파고, 미국령 사모아","파나마 시티, 파나마"],
         ["하노이, 베트남","하라레, 짐바브웨"]
     ]
-    
+
     let sections: [String] = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 
-    var selectCity: String = ""
-    
+    var selectedCity: String = ""
+
     @IBOutlet var cityTableView: UITableView!
     @IBOutlet var cancelBtn: UIButton!
-    
+    weak var delegate: SendCityDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cityTableView.delegate = self
         cityTableView.dataSource = self
     }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cityItem[section].count
-    }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityListCell", for: indexPath) as! cityListCell
-        cell.cityLabel.text = cityItem[indexPath.section][indexPath.row];
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section]
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-    }
-    
     
     @IBAction func cancelClick(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -74,4 +49,37 @@ class CityListTableViewController: UIViewController, UITableViewDelegate, UITabl
 class cityListCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     
+}
+
+protocol SendCityDelegate: AnyObject {
+    func sendData(_ city: String)
+}
+
+extension CityListTableViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityItem[section].count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cityListCell", for: indexPath) as! cityListCell
+        cell.cityLabel.text = cityItem[indexPath.section][indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section]
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCity = cityItem[indexPath.section][indexPath.row]
+        
+        self.dismiss(animated: true, completion: {
+            self.delegate?.sendData(self.selectedCity)
+        })
+    }
+
 }
