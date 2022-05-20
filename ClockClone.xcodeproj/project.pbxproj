@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2A1AD8CF2836749300AEB2A3 /* GlobalClockTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AD8CE2836749300AEB2A3 /* GlobalClockTableViewCell.swift */; };
+		2A1AD8D52837C6DA00AEB2A3 /* StopWatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AD8D42837C6DA00AEB2A3 /* StopWatchVC.swift */; };
+		2A1AD8D72837CF2B00AEB2A3 /* StopWatchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1AD8D62837CF2B00AEB2A3 /* StopWatchTableVC.swift */; };
 		2A5C8C2027E4C2B7003B8A79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C8C1F27E4C2B7003B8A79 /* AppDelegate.swift */; };
 		2A5C8C2227E4C2B7003B8A79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5C8C2127E4C2B7003B8A79 /* SceneDelegate.swift */; };
 		2A5C8C2727E4C2B7003B8A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5C8C2527E4C2B7003B8A79 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		2A1AD8CE2836749300AEB2A3 /* GlobalClockTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalClockTableViewCell.swift; sourceTree = "<group>"; };
+		2A1AD8D42837C6DA00AEB2A3 /* StopWatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchVC.swift; sourceTree = "<group>"; };
+		2A1AD8D62837CF2B00AEB2A3 /* StopWatchTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchTableVC.swift; sourceTree = "<group>"; };
 		2A5C8C1C27E4C2B7003B8A79 /* ClockClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClockClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5C8C1F27E4C2B7003B8A79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5C8C2127E4C2B7003B8A79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		2A1AD8D228369DC900AEB2A3 /* StopWatch */ = {
 			isa = PBXGroup;
 			children = (
+				2A1AD8D42837C6DA00AEB2A3 /* StopWatchVC.swift */,
+				2A1AD8D62837CF2B00AEB2A3 /* StopWatchTableVC.swift */,
 			);
 			path = StopWatch;
 			sourceTree = "<group>";
@@ -176,11 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1AD8D52837C6DA00AEB2A3 /* StopWatchVC.swift in Sources */,
 				2ABDD8E527E77B4B0098C28E /* GlobalClockViewController.swift in Sources */,
 				2A5C8C2027E4C2B7003B8A79 /* AppDelegate.swift in Sources */,
 				2A5C8C2227E4C2B7003B8A79 /* SceneDelegate.swift in Sources */,
 				2A1AD8CF2836749300AEB2A3 /* GlobalClockTableViewCell.swift in Sources */,
 				2ABDD8E927E77E780098C28E /* CityListTableViewController.swift in Sources */,
+				2A1AD8D72837CF2B00AEB2A3 /* StopWatchTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
