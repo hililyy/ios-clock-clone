@@ -10,7 +10,7 @@ import UIKit
 
 
 class CityListTableViewController: UIViewController {
-    let cityItem: [[String]] = [
+    var cityItem: [[String]] = [
         ["가보로네, 보츠와나","가자, 팔레스타인"],
         ["나소, 바하마","나우루, 미크로네시아"],
         ["다롄, 중국 본토","다르에스살람, 탄자니아"],
@@ -26,8 +26,10 @@ class CityListTableViewController: UIViewController {
         ["파고파고, 미국령 사모아","파나마 시티, 파나마"],
         ["하노이, 베트남","하라레, 짐바브웨"]
     ]
+    
+    var selectedItems: [String] = []
 
-    let sections: [String] = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
+    var sections: [String] = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ㅊ","ㅋ","ㅌ","ㅍ","ㅎ"]
 
     var selectedCity: String = ""
 
@@ -39,6 +41,17 @@ class CityListTableViewController: UIViewController {
         super.viewDidLoad()
         cityTableView.delegate = self
         cityTableView.dataSource = self
+
+        for count in selectedItems {
+            if let index = cityItem.firstIndex(where: {$0.contains(count)}),
+               let subIndex = cityItem[index].firstIndex(of: count) {
+                cityItem[index].remove(at: subIndex)
+                if cityItem[index].count == 0 {
+                    self.sections.remove(at: index)
+                    self.cityItem.remove(at: index)
+                }
+            }
+        }
     }
     
     @IBAction func cancelClick(_ sender: Any) {
@@ -79,6 +92,15 @@ extension CityListTableViewController: UITableViewDelegate, UITableViewDataSourc
         
         self.dismiss(animated: true, completion: {
             self.delegate?.sendData(self.selectedCity)
+            print("row :\(indexPath.row) section \(indexPath.section)")
+            print("indexPath :\(indexPath)")
+            print("IndexPath :\(IndexPath.self)")
+            self.cityItem[indexPath.section].remove(at: indexPath.row)
+            self.cityTableView.beginUpdates()
+            self.cityTableView.deleteRows(at: [IndexPath(row: indexPath.row, section: indexPath.section)], with: .fade)
+            print(self.cityItem)
+            self.cityTableView.endUpdates()
+            
         })
     }
 

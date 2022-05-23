@@ -10,7 +10,7 @@ import Foundation
 
 class GlobalClockViewController: UIViewController {
     
-    var cityList: Array<String> = ["서울","어쩔티비"]
+    var cityList: Array<String> = []
     @IBOutlet weak var selectedCityTableView: UITableView!
 
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class GlobalClockViewController: UIViewController {
         if segue.identifier == "cityListShow" {
             guard let cityListVC: CityListTableViewController = segue.destination as? CityListTableViewController else { return }
                 cityListVC.delegate = self
+            cityListVC.selectedItems.append(contentsOf: cityList)
         }
     }
 }
