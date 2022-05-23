@@ -170,6 +170,9 @@
                     <navigationItem key="navigationItem" id="Tqv-NH-ZjL">
                         <barButtonItem key="leftBarButtonItem" title="편집" id="5eF-C0-Wbq">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
+                            <connections>
+                                <action selector="editTable:" destination="kd5-3N-0lu" id="T2w-ze-cBn"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c0F-k4-W8A">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
@@ -179,6 +182,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editBtn" destination="5eF-C0-Wbq" id="H8P-RD-2qi"/>
                         <outlet property="selectedCityTableView" destination="9jH-uk-Fam" id="rGa-Ky-hoS"/>
                     </connections>
                 </viewController>
