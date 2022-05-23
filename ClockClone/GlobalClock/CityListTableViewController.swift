@@ -92,13 +92,9 @@ extension CityListTableViewController: UITableViewDelegate, UITableViewDataSourc
         
         self.dismiss(animated: true, completion: {
             self.delegate?.sendData(self.selectedCity)
-            print("row :\(indexPath.row) section \(indexPath.section)")
-            print("indexPath :\(indexPath)")
-            print("IndexPath :\(IndexPath.self)")
             self.cityItem[indexPath.section].remove(at: indexPath.row)
             self.cityTableView.beginUpdates()
             self.cityTableView.deleteRows(at: [IndexPath(row: indexPath.row, section: indexPath.section)], with: .fade)
-            print(self.cityItem)
             self.cityTableView.endUpdates()
             
         })

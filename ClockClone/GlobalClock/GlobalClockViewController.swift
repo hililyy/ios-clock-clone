@@ -36,6 +36,7 @@ class GlobalClockViewController: UIViewController {
 extension GlobalClockViewController: SendCityDelegate {
     func sendData(_ city: String) {
         cityList.append(city)
+        selectedCityTableView.reloadData()
     }
 }
 

@@ -174,7 +174,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="c0F-k4-W8A">
                             <color key="tintColor" systemColor="systemOrangeColor"/>
                             <connections>
-                                <segue destination="uwQ-4X-bM8" kind="modal" identifier="cityListShow" modalPresentationStyle="fullScreen" id="jGi-L2-Dqy"/>
+                                <segue destination="uwQ-4X-bM8" kind="modal" identifier="cityListShow" id="jGi-L2-Dqy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -191,7 +191,7 @@
             <objects>
                 <viewController storyboardIdentifier="CityListTableVC" id="uwQ-4X-bM8" customClass="CityListTableViewController" customModule="ClockClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qzJ-id-rkE">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도시 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-fZ-93h">
@@ -223,18 +223,18 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NNs-ra-BM8">
-                                <rect key="frame" x="0.0" y="137.66666666666669" width="390" height="672.33333333333326"/>
+                                <rect key="frame" x="0.0" y="137.66666666666669" width="390" height="652.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityListCell" id="JOo-DB-gdA" customClass="cityListCell" customModule="ClockClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JOo-DB-gdA" id="LVv-XH-8T8" customClass="CityListTableViewCell" customModule="ClockClone" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고텐부르크, 스웨덴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Me-Ki-gj1">
-                                                    <rect key="frame" x="20" y="10.999999999999998" width="127" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="127" height="20.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
